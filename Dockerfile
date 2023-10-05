@@ -13,7 +13,7 @@ RUN go mod init fullcycle
 # You may want to change this to copy only what you actually need.
 
 # Build the application
-RUN go build
+RUN go build -ldflags="-s -w"
 
 # Let's create a /dist folder containing just the files necessary for runtime.
 # Later, it will be copied as the / (root) of the output image.
